@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseDatabase
+import FirebaseFirestore
 
 
 //Can be here instead of its own file. Could add as its own file for brevity. Can stay here since only used/refd by this file
@@ -28,37 +28,49 @@ enum FirebaseError: LocalizedError {
 }
 
 struct FirebaseController {
-    let ref = Database.database().reference()
+    let dataBase = Firestore.firestore()
     
     func saveLocation(_ location: Contact) {
-        ref.child(Contact.Key.collectionType).child(location.uuid).setValue(location.locationData)
+        dataBase.collection(Contact.Key.collectionType).document(location.uuid).setData(location.locationData)
     }
     
     func deleteLocation(_ location: Contact) {
-        ref.child(Contact.Key.collectionType).child(location.uuid).setValue(nil)
+        dataBase.collection(Contact.Key.collectionType).document(location.uuid).delete()
         FirebaseStorageController().deleteImage(fromcontact: location)
     }
     
     func getLocations(completion: @escaping (Result<[Contact], FirebaseError>) -> Void) {
-        //Fetching the data from the real time database. Specified by the child key "location"
-        ref.child(Contact.Key.collectionType).getData { error, snapshot in
-            //checking to see if there was an error, if so, we complete with a failure and return out of the function.
+        dataBase.collection(Contact.Key.collectionType).getDocuments { snapshot, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
             }
-            //checking to see if we have data, if so, completing with a dictionary of type dictionary
-            guard let data = snapshot.value as? [String: [String: Any]] else { completion(.failure(.noData)); return }
             
-            //gets the values from our data dictionary and turns them into an array.
-            let dataArray = Array(data.values)
-            //Transforms our array of dictionaries into an array of locations
-            let locations = dataArray.compactMap({ Contact(fromDictionary: $0) })
-            //sorting locations by date
-            let sortedLocations = locations.sorted(by: { $0.firstName > $1.firstName })
-            //completing with our sorted locations
-            completion(.success(sortedLocations))
+            guard let data = snapshot?.documents else { completion(.failure(.noData)); return }
+            let dataArray = data.compactMap({ $0.data() })
+            let locationArray = dataArray.compactMap({ Contact(fromDictionary: $0 )})
+            let sortedLocation = locationArray.sorted(by: { $0.contactDate > $1.contactDate })
+            completion(.success(sortedLocation))
         }
     }
 }
+        //Fetching the data from the real time database. Specified by the child key "location"
+//        ref.child(Contact.Key.collectionType).getData { error, snapshot in
+//            //checking to see if there was an error, if so, we complete with a failure and return out of the function.
+//            if let error = error {
+//                completion(.failure(.failure(error)))
+//                return
+//            }
+//            //checking to see if we have data, if so, completing with a dictionary of type dictionary
+//            guard let data = snapshot.value as? [String: [String: Any]] else { completion(.failure(.noData)); return }
+//
+//            //gets the values from our data dictionary and turns them into an array.
+//            let dataArray = Array(data.values)
+//            //Transforms our array of dictionaries into an array of locations
+//            let locations = dataArray.compactMap({ Contact(fromDictionary: $0) })
+//            //sorting locations by date
+//            let sortedLocations = locations.sorted(by: { $0.firstName > $1.firstName })
+//            //completing with our sorted locations
+//            completion(.success(sortedLocations))
+//        }
 

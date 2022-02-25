@@ -7,7 +7,7 @@
 
 import Foundation
 import FirebaseStorage
-import UIKit
+import UIKit.UIImage
 
 struct FirebaseStorageController {
     let storage = Storage.storage().reference()
@@ -28,7 +28,7 @@ struct FirebaseStorageController {
         }
     }
     
-    func loadImage(fromContact contact: Contact, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
+    func loadImage(from contact: Contact, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
         storage.child(contact.imagePath).getData(maxSize: 4000 * 4000) { data, error in
             if let error = error {
                 completion(.failure(.failure(error)))
