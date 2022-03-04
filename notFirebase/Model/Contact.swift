@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Contacts
 
 class Contact {
     
@@ -18,32 +19,39 @@ class Contact {
         static let contactDate = "contactDate"
         static let uuid = "uuid"
         static let imageURL = "imageURL"
+        static let phoneNumber = "phoneNumber"
     }
     
     var imagePath: String {
         "images/\(self.uuid)"
     }
     
+    
     var firstName: String
     var company: String
     var note: String
     let contactDate: Date
     let uuid: String
+    var phoneNumber: Int
+
     
     var locationData: [String: Any] {
         [Key.firstName : self.firstName,
          Key.company : self.company,
          Key.note : self.note,
          Key.contactDate : self.contactDate.timeIntervalSince1970,
-         Key.uuid : self.uuid]
+         Key.uuid : self.uuid,
+         Key.phoneNumber : self.phoneNumber]
     }
     
-    init(firstName: String, company: String, note: String, contactDate: Date = Date(), uuid: String = UUID().uuidString) {
+    init(firstName: String, company: String, note: String, contactDate: Date = Date(), uuid: String = UUID().uuidString, phoneNumber: Int = Int() ) {
+        
         self.firstName = firstName
         self.company = company
         self.note = note
         self.contactDate = contactDate
         self.uuid = uuid
+        self.phoneNumber = phoneNumber
         
     }
     
@@ -52,7 +60,8 @@ class Contact {
               let company = dictionary[Key.company] as? String,
               let note = dictionary[Key.note] as? String,
               let dateNum = dictionary[Key.contactDate] as? Double,
-              let uuid = dictionary[Key.uuid] as? String
+              let uuid = dictionary[Key.uuid] as? String,
+              let phoneNumber = dictionary[Key.phoneNumber] as? Int
         else { return nil}
         
         self.firstName = fistName
@@ -60,6 +69,7 @@ class Contact {
         self.note = note
         self.contactDate = Date(timeIntervalSince1970: dateNum)
         self.uuid = uuid
+        self.phoneNumber = phoneNumber
     }
 }
 

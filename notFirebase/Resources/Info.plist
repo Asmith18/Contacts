@@ -22,6 +22,12 @@
 		</dict>
 	</dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>please allow access.</string>
+	<string>$(PRODUCT_NAME) need access to the Photo Library in order to send Media Messages</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) need access to the camera in order to update your avatar</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) need access to the Microphone in order to connect Audio/Video Call</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(PRODUCT_NAME) need access to the location services in order to share your location</string>
 </dict>
 </plist>

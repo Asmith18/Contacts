@@ -26,10 +26,11 @@
 		C21FE66027C8195000942032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21FE65F27C8195000942032 /* Main.storyboard */; };
 		C21FE66327C83F7D00942032 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C21FE66227C83F7D00942032 /* FirebaseFirestore */; };
 		C21FE66527C83F7D00942032 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = C21FE66427C83F7D00942032 /* FirebaseFirestoreSwift-Beta */; };
+		C25047A927CFC822001C11AB /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25047A727CFC822001C11AB /* Messages.framework */; };
+		C25047AA27CFC822001C11AB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25047A827CFC822001C11AB /* MessageUI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C21FE61127C6EF8F00942032 /* notFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = notFirebase.app; path = "/Users/adamsmith/Developer/Stateful/Unit 7/Unit 7.1/Paired Programming Project/BYOA_Firebase/notFirebase/build/Debug-iphoneos/notFirebase.app"; sourceTree = "<absolute>"; };
 		C21FE61427C6EF8F00942032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21FE61627C6EF8F00942032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C21FE61827C6EF8F00942032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +47,9 @@
 		C21FE64827C6F6D400942032 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C21FE65D27C80E5800942032 /* FirebaseStroageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStroageController.swift; sourceTree = "<group>"; };
 		C21FE65F27C8195000942032 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C25047A727CFC822001C11AB /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		C25047A827CFC822001C11AB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C25047AB27CFC9F1001C11AB /* notFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25047A927CFC822001C11AB /* Messages.framework in Frameworks */,
+				C25047AA27CFC822001C11AB /* MessageUI.framework in Frameworks */,
 				C21FE64C27C74F2900942032 /* FirebaseStorage in Frameworks */,
 				C21FE66527C83F7D00942032 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				C21FE66327C83F7D00942032 /* FirebaseFirestore in Frameworks */,
@@ -67,7 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				C21FE61327C6EF8F00942032 /* notFirebase */,
-				C21FE66127C83F7D00942032 /* Frameworks */,
+				C25047A627CFC822001C11AB /* Frameworks */,
+				C25047AB27CFC9F1001C11AB /* notFirebase.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,8 +124,8 @@
 		C21FE62B27C6EFE400942032 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE63327C6F04200942032 /* Contact  */,
 				C21FE63227C6F03B00942032 /* Contact Detail */,
+				C21FE63327C6F04200942032 /* Contact  */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -158,9 +165,11 @@
 			path = "Contact ";
 			sourceTree = "<group>";
 		};
-		C21FE66127C83F7D00942032 /* Frameworks */ = {
+		C25047A627CFC822001C11AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C25047A727CFC822001C11AB /* Messages.framework */,
+				C25047A827CFC822001C11AB /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,7 +197,7 @@
 				C21FE66427C83F7D00942032 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = notFirebase;
-			productReference = C21FE61127C6EF8F00942032 /* notFirebase.app */;
+			productReference = C25047AB27CFC9F1001C11AB /* notFirebase.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -325,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -393,10 +402,12 @@
 		C21FE62627C6EF9000942032 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9DXP3CGV77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = notFirebase/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -409,6 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamsmith.notFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -420,10 +432,12 @@
 		C21FE62727C6EF9000942032 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9DXP3CGV77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = notFirebase/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -436,6 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamsmith.notFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -65,7 +65,7 @@
         <!--Contact Detail View Controller-->
         <scene sceneID="eO0-gG-31w">
             <objects>
-                <viewController id="PKd-K5-7Ym" customClass="ContactDetailViewController" customModule="notFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PKd-K5-7Ym" customClass="ContactDetailViewController" customModule="notFirebase" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oen-zF-yIR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,6 +116,9 @@
                                             <color key="baseForegroundColor" systemColor="systemBlueColor"/>
                                             <color key="baseBackgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="messageButtonTapped:" destination="PKd-K5-7Ym" eventType="touchUpInside" id="68J-0Z-jhs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17s-sE-dGH">
                                         <rect key="frame" x="259.5" y="0.0" width="104.5" height="31"/>
