@@ -7,20 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21ED85B281D92B700BCEC26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21ED85A281D92B700BCEC26 /* GoogleService-Info.plist */; };
+		C21ED85D281D92D100BCEC26 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21ED85C281D92D100BCEC26 /* Contact.swift */; };
 		C21FE61527C6EF8F00942032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE61427C6EF8F00942032 /* AppDelegate.swift */; };
 		C21FE61727C6EF8F00942032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE61627C6EF8F00942032 /* SceneDelegate.swift */; };
 		C21FE61927C6EF8F00942032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE61827C6EF8F00942032 /* ViewController.swift */; };
 		C21FE61E27C6EF9000942032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21FE61D27C6EF9000942032 /* Assets.xcassets */; };
 		C21FE62127C6EF9000942032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21FE61F27C6EF9000942032 /* LaunchScreen.storyboard */; };
 		C21FE62F27C6F00C00942032 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE62E27C6F00C00942032 /* FirebaseController.swift */; };
-		C21FE63127C6F02800942032 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE63027C6F02800942032 /* Contact.swift */; };
-		C21FE63527C6F05400942032 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE63427C6F05400942032 /* ContactTableViewController.swift */; };
-		C21FE63727C6F06400942032 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE63627C6F06400942032 /* ContactViewModel.swift */; };
-		C21FE63A27C6F06E00942032 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE63827C6F06E00942032 /* ContactDetailViewModel.swift */; };
-		C21FE63B27C6F06E00942032 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE63927C6F06E00942032 /* ContactDetailViewController.swift */; };
 		C21FE63D27C6F07900942032 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE63C27C6F07900942032 /* DataHelper.swift */; };
 		C21FE64327C6F18500942032 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C21FE64227C6F18500942032 /* FirebaseAuth */; };
-		C21FE64927C6F6D400942032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21FE64827C6F6D400942032 /* GoogleService-Info.plist */; };
 		C21FE64C27C74F2900942032 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C21FE64B27C74F2900942032 /* FirebaseStorage */; };
 		C21FE65E27C80E5800942032 /* FirebaseStroageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE65D27C80E5800942032 /* FirebaseStroageController.swift */; };
 		C21FE66027C8195000942032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21FE65F27C8195000942032 /* Main.storyboard */; };
@@ -31,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C21ED85A281D92B700BCEC26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C21ED85C281D92D100BCEC26 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		C21FE61427C6EF8F00942032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21FE61627C6EF8F00942032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C21FE61827C6EF8F00942032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,13 +36,7 @@
 		C21FE62027C6EF9000942032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C21FE62227C6EF9000942032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C21FE62E27C6F00C00942032 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
-		C21FE63027C6F02800942032 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		C21FE63427C6F05400942032 /* ContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactTableViewController.swift; path = ../../../../Firebase/Firebase/View/Contact/ContactTableViewController.swift; sourceTree = "<group>"; };
-		C21FE63627C6F06400942032 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewModel.swift; path = ../../../../Firebase/Firebase/View/Contact/ContactViewModel.swift; sourceTree = "<group>"; };
-		C21FE63827C6F06E00942032 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailViewModel.swift; path = "../../../../Firebase/Firebase/View/Contact Detail/ContactDetailViewModel.swift"; sourceTree = "<group>"; };
-		C21FE63927C6F06E00942032 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailViewController.swift; path = "../../../../Firebase/Firebase/View/Contact Detail/ContactDetailViewController.swift"; sourceTree = "<group>"; };
 		C21FE63C27C6F07900942032 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = "../../../Firebase/Firebase/Helper Files/DataHelper.swift"; sourceTree = "<group>"; };
-		C21FE64827C6F6D400942032 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C21FE65D27C80E5800942032 /* FirebaseStroageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStroageController.swift; sourceTree = "<group>"; };
 		C21FE65F27C8195000942032 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C25047A727CFC822001C11AB /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -81,7 +73,7 @@
 		C21FE61327C6EF8F00942032 /* notFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE64827C6F6D400942032 /* GoogleService-Info.plist */,
+				C21ED85A281D92B700BCEC26 /* GoogleService-Info.plist */,
 				C21FE62A27C6EFDE00942032 /* Helper Files */,
 				C21FE62D27C6EFF200942032 /* Firebase */,
 				C21FE62C27C6EFEA00942032 /* Model */,
@@ -133,7 +125,7 @@
 		C21FE62C27C6EFEA00942032 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE63027C6F02800942032 /* Contact.swift */,
+				C21ED85C281D92D100BCEC26 /* Contact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,8 +142,6 @@
 		C21FE63227C6F03B00942032 /* Contact Detail */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE63927C6F06E00942032 /* ContactDetailViewController.swift */,
-				C21FE63827C6F06E00942032 /* ContactDetailViewModel.swift */,
 			);
 			path = "Contact Detail";
 			sourceTree = "<group>";
@@ -159,8 +149,6 @@
 		C21FE63327C6F04200942032 /* Contact  */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE63427C6F05400942032 /* ContactTableViewController.swift */,
-				C21FE63627C6F06400942032 /* ContactViewModel.swift */,
 			);
 			path = "Contact ";
 			sourceTree = "<group>";
@@ -242,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C21FE62127C6EF9000942032 /* LaunchScreen.storyboard in Resources */,
-				C21FE64927C6F6D400942032 /* GoogleService-Info.plist in Resources */,
+				C21ED85B281D92B700BCEC26 /* GoogleService-Info.plist in Resources */,
 				C21FE61E27C6EF9000942032 /* Assets.xcassets in Resources */,
 				C21FE66027C8195000942032 /* Main.storyboard in Resources */,
 			);
@@ -258,14 +246,10 @@
 				C21FE62F27C6F00C00942032 /* FirebaseController.swift in Sources */,
 				C21FE65E27C80E5800942032 /* FirebaseStroageController.swift in Sources */,
 				C21FE61927C6EF8F00942032 /* ViewController.swift in Sources */,
-				C21FE63A27C6F06E00942032 /* ContactDetailViewModel.swift in Sources */,
-				C21FE63527C6F05400942032 /* ContactTableViewController.swift in Sources */,
-				C21FE63B27C6F06E00942032 /* ContactDetailViewController.swift in Sources */,
-				C21FE63127C6F02800942032 /* Contact.swift in Sources */,
-				C21FE63727C6F06400942032 /* ContactViewModel.swift in Sources */,
 				C21FE61527C6EF8F00942032 /* AppDelegate.swift in Sources */,
 				C21FE61727C6EF8F00942032 /* SceneDelegate.swift in Sources */,
 				C21FE63D27C6F07900942032 /* DataHelper.swift in Sources */,
+				C21ED85D281D92D100BCEC26 /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
