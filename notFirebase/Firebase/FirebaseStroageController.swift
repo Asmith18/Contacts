@@ -46,3 +46,8 @@ struct FirebaseStorageController {
         storage.child(contact.imagePath).delete(completion: nil)
     }
 }
+
+
+
+
+

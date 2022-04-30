@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseStorage
 import FirebaseFirestore
 
 
@@ -31,16 +33,16 @@ struct FirebaseController {
     let dataBase = Firestore.firestore()
     
     func saveLocation(_ location: Contact) {
-        dataBase.collection(Contact.Key.collectionType).document(location.uuid).setData(location.locationData)
+        dataBase.collection(Contact.Keys.collectionType).document(location.uuid).setData(location.contactData)
     }
     
     func deleteLocation(_ location: Contact) {
-        dataBase.collection(Contact.Key.collectionType).document(location.uuid).delete()
+        dataBase.collection(Contact.Keys.collectionType).document(location.uuid).delete()
         FirebaseStorageController().deleteImage(fromcontact: location)
     }
     
     func getLocations(completion: @escaping (Result<[Contact], FirebaseError>) -> Void) {
-        dataBase.collection(Contact.Key.collectionType).getDocuments { snapshot, error in
+        dataBase.collection(Contact.Keys.collectionType).getDocuments { snapshot, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
@@ -49,16 +51,15 @@ struct FirebaseController {
             guard let data = snapshot?.documents else { completion(.failure(.noData)); return }
             let dataArray = data.compactMap({ $0.data() })
             let locationArray = dataArray.compactMap({ Contact(fromDictionary: $0 )})
-            let sortedLocation = locationArray.sorted(by: { $0.contactDate > $1.contactDate })
-            completion(.success(sortedLocation))
+            completion(.success(locationArray))
         }
     }
 }
-        //Fetching the data from the real time database. Specified by the child key "location"
+//        //Fetching the data from the real time database. Specified by the child key "location"
 //        ref.child(Contact.Key.collectionType).getData { error, snapshot in
 //            //checking to see if there was an error, if so, we complete with a failure and return out of the function.
 //            if let error = error {
-//                completion(.failure(.failure(error)))
+//                completion(.failure(.failure(error)))locationData
 //                return
 //            }
 //            //checking to see if we have data, if so, completing with a dictionary of type dictionary

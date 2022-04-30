@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		C21ED85B281D92B700BCEC26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21ED85A281D92B700BCEC26 /* GoogleService-Info.plist */; };
 		C21ED85D281D92D100BCEC26 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21ED85C281D92D100BCEC26 /* Contact.swift */; };
+		C21ED860281D9FF400BCEC26 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21ED85F281D9FF400BCEC26 /* ContactTableViewController.swift */; };
+		C21ED862281DA01D00BCEC26 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21ED861281DA01D00BCEC26 /* ContactDetailViewController.swift */; };
+		C21ED865281DA0F100BCEC26 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21ED864281DA0F100BCEC26 /* ContactViewModel.swift */; };
 		C21FE61527C6EF8F00942032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE61427C6EF8F00942032 /* AppDelegate.swift */; };
 		C21FE61727C6EF8F00942032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE61627C6EF8F00942032 /* SceneDelegate.swift */; };
 		C21FE61927C6EF8F00942032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE61827C6EF8F00942032 /* ViewController.swift */; };
 		C21FE61E27C6EF9000942032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21FE61D27C6EF9000942032 /* Assets.xcassets */; };
 		C21FE62127C6EF9000942032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21FE61F27C6EF9000942032 /* LaunchScreen.storyboard */; };
 		C21FE62F27C6F00C00942032 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE62E27C6F00C00942032 /* FirebaseController.swift */; };
-		C21FE63D27C6F07900942032 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE63C27C6F07900942032 /* DataHelper.swift */; };
 		C21FE64327C6F18500942032 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C21FE64227C6F18500942032 /* FirebaseAuth */; };
 		C21FE64C27C74F2900942032 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C21FE64B27C74F2900942032 /* FirebaseStorage */; };
 		C21FE65E27C80E5800942032 /* FirebaseStroageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FE65D27C80E5800942032 /* FirebaseStroageController.swift */; };
@@ -29,6 +31,9 @@
 /* Begin PBXFileReference section */
 		C21ED85A281D92B700BCEC26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C21ED85C281D92D100BCEC26 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		C21ED85F281D9FF400BCEC26 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		C21ED861281DA01D00BCEC26 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		C21ED864281DA0F100BCEC26 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		C21FE61427C6EF8F00942032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21FE61627C6EF8F00942032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C21FE61827C6EF8F00942032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,12 +41,11 @@
 		C21FE62027C6EF9000942032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C21FE62227C6EF9000942032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C21FE62E27C6F00C00942032 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
-		C21FE63C27C6F07900942032 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = "../../../Firebase/Firebase/Helper Files/DataHelper.swift"; sourceTree = "<group>"; };
 		C21FE65D27C80E5800942032 /* FirebaseStroageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStroageController.swift; sourceTree = "<group>"; };
 		C21FE65F27C8195000942032 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C25047A727CFC822001C11AB /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		C25047A827CFC822001C11AB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		C25047AB27CFC9F1001C11AB /* notFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25047AB27CFC9F1001C11AB /* notFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = notFirebase.app; path = "/Users/adamsmith/Developer/Stateful/Unit 7/Unit 7.1/Paired Programming Project/BYOA_Firebase/notFirebase/build/Debug-iphoneos/notFirebase.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,6 @@
 			children = (
 				C21FE61327C6EF8F00942032 /* notFirebase */,
 				C25047A627CFC822001C11AB /* Frameworks */,
-				C25047AB27CFC9F1001C11AB /* notFirebase.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +111,6 @@
 		C21FE62A27C6EFDE00942032 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE63C27C6F07900942032 /* DataHelper.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -116,8 +118,8 @@
 		C21FE62B27C6EFE400942032 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE63227C6F03B00942032 /* Contact Detail */,
 				C21FE63327C6F04200942032 /* Contact  */,
+				C21FE63227C6F03B00942032 /* Contact Detail */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -142,6 +144,7 @@
 		C21FE63227C6F03B00942032 /* Contact Detail */ = {
 			isa = PBXGroup;
 			children = (
+				C21ED861281DA01D00BCEC26 /* ContactDetailViewController.swift */,
 			);
 			path = "Contact Detail";
 			sourceTree = "<group>";
@@ -149,6 +152,8 @@
 		C21FE63327C6F04200942032 /* Contact  */ = {
 			isa = PBXGroup;
 			children = (
+				C21ED85F281D9FF400BCEC26 /* ContactTableViewController.swift */,
+				C21ED864281DA0F100BCEC26 /* ContactViewModel.swift */,
 			);
 			path = "Contact ";
 			sourceTree = "<group>";
@@ -247,8 +252,10 @@
 				C21FE65E27C80E5800942032 /* FirebaseStroageController.swift in Sources */,
 				C21FE61927C6EF8F00942032 /* ViewController.swift in Sources */,
 				C21FE61527C6EF8F00942032 /* AppDelegate.swift in Sources */,
+				C21ED860281D9FF400BCEC26 /* ContactTableViewController.swift in Sources */,
 				C21FE61727C6EF8F00942032 /* SceneDelegate.swift in Sources */,
-				C21FE63D27C6F07900942032 /* DataHelper.swift in Sources */,
+				C21ED862281DA01D00BCEC26 /* ContactDetailViewController.swift in Sources */,
+				C21ED865281DA0F100BCEC26 /* ContactViewModel.swift in Sources */,
 				C21ED85D281D92D100BCEC26 /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
