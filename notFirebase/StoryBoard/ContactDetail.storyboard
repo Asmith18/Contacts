@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Wb-oi-rgI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Contact-->
+        <scene sceneID="Ceh-nk-Tjf">
+            <objects>
+                <viewController storyboardIdentifier="detail" id="2Wb-oi-rgI" customClass="ContactDetailViewController" customModule="notFirebase" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eZl-1d-kfg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.aperture" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sWZ-zs-djr">
+                                <rect key="frame" x="150" y="69.5" width="114" height="113"/>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sWZ-zs-djr" secondAttribute="height" multiplier="1:1" id="YB4-M0-S8K"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8t-My-k3c">
+                                <rect key="frame" x="150" y="69" width="114" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="A4e-vJ-IOK"/>
+                                    <constraint firstAttribute="height" constant="114" id="dh1-sF-oE7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="imagePickerButtonTapped:" destination="2Wb-oi-rgI" eventType="touchUpInside" id="Ykl-Bl-2Cz"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jqA-cI-ocN">
+                                <rect key="frame" x="25" y="233" width="364" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7W-Om-Ygu">
+                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="phone.fill" catalog="system">
+                                            <color key="baseForegroundColor" systemColor="linkColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnb-Jn-8LP">
+                                        <rect key="frame" x="129.5" y="0.0" width="105" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="message.fill" catalog="system">
+                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                            <color key="baseBackgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="messagebuttonTapped:" destination="2Wb-oi-rgI" eventType="touchUpInside" id="sbb-oZ-QkF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM8-KI-WI4">
+                                        <rect key="frame" x="259.5" y="0.0" width="104.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="video.fill" catalog="system">
+                                            <color key="baseForegroundColor" systemColor="linkColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tvJ-t1-zwY">
+                                <rect key="frame" x="25" y="289" width="364" height="118"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLr-Dh-dOX">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s5L-dl-nQM">
+                                        <rect key="frame" x="0.0" y="42" width="364" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1L-cy-dc4">
+                                        <rect key="frame" x="0.0" y="84" width="364" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lsh-Ka-3Pm">
+                                <rect key="frame" x="25" y="432" width="364" height="280"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lLO-eB-ZDr"/>
+                        <color key="backgroundColor" red="0.92158359290000003" green="0.92158359290000003" blue="0.92158359290000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lLO-eB-ZDr" firstAttribute="trailing" secondItem="lsh-Ka-3Pm" secondAttribute="trailing" constant="25" id="1F0-gF-NC9"/>
+                            <constraint firstItem="lLO-eB-ZDr" firstAttribute="bottom" secondItem="lsh-Ka-3Pm" secondAttribute="bottom" constant="150" id="3iN-Qn-7St"/>
+                            <constraint firstItem="lLO-eB-ZDr" firstAttribute="trailing" secondItem="jqA-cI-ocN" secondAttribute="trailing" constant="25" id="4gM-e5-TSR"/>
+                            <constraint firstItem="t8t-My-k3c" firstAttribute="leading" secondItem="sWZ-zs-djr" secondAttribute="leading" id="6eU-hL-YEv"/>
+                            <constraint firstItem="sWZ-zs-djr" firstAttribute="top" secondItem="lLO-eB-ZDr" secondAttribute="top" constant="25" id="C4q-si-OPL"/>
+                            <constraint firstItem="t8t-My-k3c" firstAttribute="top" secondItem="sWZ-zs-djr" secondAttribute="top" id="H7w-kI-YnY"/>
+                            <constraint firstItem="lsh-Ka-3Pm" firstAttribute="leading" secondItem="lLO-eB-ZDr" secondAttribute="leading" constant="25" id="M0M-CW-9yH"/>
+                            <constraint firstItem="tvJ-t1-zwY" firstAttribute="top" secondItem="jqA-cI-ocN" secondAttribute="bottom" constant="25" id="Rsy-en-Whe"/>
+                            <constraint firstItem="jqA-cI-ocN" firstAttribute="leading" secondItem="lLO-eB-ZDr" secondAttribute="leading" constant="25" id="Ub5-45-q5I"/>
+                            <constraint firstItem="lsh-Ka-3Pm" firstAttribute="top" secondItem="tvJ-t1-zwY" secondAttribute="bottom" constant="25" id="UxO-Ub-sP4"/>
+                            <constraint firstItem="sWZ-zs-djr" firstAttribute="leading" secondItem="lLO-eB-ZDr" secondAttribute="leading" constant="150" id="WsP-6Q-ygk"/>
+                            <constraint firstItem="tvJ-t1-zwY" firstAttribute="leading" secondItem="lLO-eB-ZDr" secondAttribute="leading" constant="25" id="Yxm-VR-1gb"/>
+                            <constraint firstItem="tvJ-t1-zwY" firstAttribute="top" secondItem="jqA-cI-ocN" secondAttribute="bottom" constant="25" id="iww-Mt-5It"/>
+                            <constraint firstItem="jqA-cI-ocN" firstAttribute="top" secondItem="sWZ-zs-djr" secondAttribute="bottom" constant="50" id="nXo-kj-5ye"/>
+                            <constraint firstItem="lLO-eB-ZDr" firstAttribute="trailing" secondItem="tvJ-t1-zwY" secondAttribute="trailing" constant="25" id="o1V-v4-WQg"/>
+                            <constraint firstItem="lLO-eB-ZDr" firstAttribute="trailing" secondItem="sWZ-zs-djr" secondAttribute="trailing" constant="150" id="pMV-Mo-Mqc"/>
+                            <constraint firstItem="lsh-Ka-3Pm" firstAttribute="top" secondItem="tvJ-t1-zwY" secondAttribute="bottom" constant="25" id="s65-r5-Afr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Contact" id="ZHH-eL-7iS">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="9GH-yC-zTU">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="2Wb-oi-rgI" id="6Ua-cW-awe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ProfileImage" destination="sWZ-zs-djr" id="ulo-eD-bv1"/>
+                        <outlet property="companyTextField" destination="s5L-dl-nQM" id="VZf-1b-VlS"/>
+                        <outlet property="nameTextfield" destination="YLr-Dh-dOX" id="qRk-3r-wBy"/>
+                        <outlet property="notesTextView" destination="lsh-Ka-3Pm" id="iEN-gT-xHv"/>
+                        <outlet property="phoneNumbertextField" destination="h1L-cy-dc4" id="U20-2i-sVJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4S-CE-akf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.6956521739132" y="-95.089285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.aperture" catalog="system" width="128" height="121"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

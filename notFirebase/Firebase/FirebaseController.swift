@@ -33,25 +33,25 @@ struct FirebaseController {
     let dataBase = Firestore.firestore()
     
     func saveLocation(_ location: Contact) {
-        dataBase.collection(Contact.Keys.collectionType).document(location.uuid).setData(location.contactData)
+        dataBase.collection("Contacts").document(location.uuid).setData(location.contactData)
     }
     
     func deleteLocation(_ location: Contact) {
-        dataBase.collection(Contact.Keys.collectionType).document(location.uuid).delete()
+        dataBase.collection("Contacts").document(location.uuid).collection(Contact.Keys.collectionType).document(location.uuid).delete()
         FirebaseStorageController().deleteImage(fromcontact: location)
     }
     
     func getLocations(completion: @escaping (Result<[Contact], FirebaseError>) -> Void) {
-        dataBase.collection(Contact.Keys.collectionType).getDocuments { snapshot, error in
+        dataBase.collection("Contacts").getDocuments { contact, error in
             if let error = error {
                 completion(.failure(.failure(error)))
                 return
             }
             
-            guard let data = snapshot?.documents else { completion(.failure(.noData)); return }
+            guard let data = contact?.documents else { completion(.failure(.noData)); return }
             let dataArray = data.compactMap({ $0.data() })
-            let locationArray = dataArray.compactMap({ Contact(fromDictionary: $0 )})
-            completion(.success(locationArray))
+            let contactArray = dataArray.compactMap({ Contact(fromDictionary: $0 )})
+            completion(.success(contactArray))
         }
     }
 }

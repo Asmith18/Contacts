@@ -11,10 +11,10 @@ import UIKit
 class Contact {
     
     let name: String
-    let company: String
-    let phoneNumber: String
-    let notes: String
-    let profileImage: String
+    let company: String?
+    let phoneNumber: String?
+    let notes: String?
+    let profileImage: String?
     let uuid: String
     
     enum Keys {
@@ -40,6 +40,16 @@ class Contact {
          Keys.uuid: self.uuid]
 
     }
+    
+    init(name: String, company: String?, phoneNumber: String?, notes: String?, profilePhoto: String?, uuid: String = UUID().uuidString) {
+        self.name = name
+        self.company = company
+        self.phoneNumber = phoneNumber
+        self.notes = notes
+        self.profileImage = profilePhoto
+        self.uuid = uuid
+    }
+    
     
     init?(fromDictionary dictionary: [String: Any]) {
         guard let name = dictionary[Keys.name] as? String,
