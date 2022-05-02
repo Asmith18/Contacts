@@ -20,7 +20,13 @@ class ContactTableViewController: UITableViewController {
         viewModel.fetchMyContacts()
         tableView.reloadData()
     }
-
+    
+    @IBAction func addContactButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ContactDetail", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "detail") as? ContactDetailViewController else { return }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.contactList.count
@@ -36,6 +42,12 @@ class ContactTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        let contact = viewModel.contactList[indexPath.row]
+        let storyboard = UIStoryboard(name: "ContactDetail", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "detail") as? ContactDetailViewController else { return }
+        viewController.viewModel = ContactDetailViewModel(contact: contact)
+        viewController.viewModel.contact = viewModel.contactList[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 
 

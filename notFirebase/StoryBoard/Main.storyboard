@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +39,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="CZO-Hj-B6G" id="rzN-Pd-U09"/>
-                                    <segue destination="PKd-K5-7Ym" kind="show" identifier="todetailContact" id="43f-vb-Iu6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -52,7 +50,7 @@
                     <navigationItem key="navigationItem" title="My Contacts" id="J1l-hf-EJy">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Vpi-hU-XKu">
                             <connections>
-                                <segue destination="PKd-K5-7Ym" kind="show" id="W8y-z7-OOC"/>
+                                <action selector="addContactButtonTapped:" destination="DhL-hb-YbA" id="zy1-kf-RfK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -60,135 +58,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Trm-XR-AL8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="946.37681159420299" y="-95.089285714285708"/>
-        </scene>
-        <!--New Contact-->
-        <scene sceneID="eO0-gG-31w">
-            <objects>
-                <viewController storyboardIdentifier="detail" id="PKd-K5-7Ym" customClass="ContactDetailViewController" customModule="notFirebase" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Oen-zF-yIR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.aperture" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="npb-Rw-sru">
-                                <rect key="frame" x="150" y="113.5" width="114" height="113"/>
-                                <color key="tintColor" systemColor="linkColor"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="npb-Rw-sru" secondAttribute="height" multiplier="1:1" id="bR3-yI-i67"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spx-Cl-maW">
-                                <rect key="frame" x="150" y="113" width="114" height="114"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="fUz-T6-J6c"/>
-                                    <constraint firstAttribute="height" constant="114" id="gRu-dB-Een"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <action selector="imagePickerButtonTapped:" destination="PKd-K5-7Ym" eventType="touchUpInside" id="xFK-u0-huS"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="KzX-fh-5yp">
-                                <rect key="frame" x="25" y="277" width="364" height="31"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cee-gP-Q8i">
-                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="phone.fill" catalog="system">
-                                            <color key="baseForegroundColor" systemColor="linkColor"/>
-                                            <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nC-4q-OU4">
-                                        <rect key="frame" x="129.5" y="0.0" width="105" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="message.fill" catalog="system">
-                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
-                                            <color key="baseBackgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="messagebuttonTapped:" destination="PKd-K5-7Ym" eventType="touchUpInside" id="jUE-Cz-ycn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17s-sE-dGH">
-                                        <rect key="frame" x="259.5" y="0.0" width="104.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="video.fill" catalog="system">
-                                            <color key="baseForegroundColor" systemColor="linkColor"/>
-                                            <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dkH-6j-wdM">
-                                <rect key="frame" x="25" y="333" width="364" height="118"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B99-2t-Uzr">
-                                        <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mjR-2b-5So">
-                                        <rect key="frame" x="0.0" y="42" width="364" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsB-C8-Q06">
-                                        <rect key="frame" x="0.0" y="84" width="364" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9di-at-2Zd">
-                                <rect key="frame" x="25" y="476" width="364" height="236"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xmW-7l-dXW"/>
-                        <color key="backgroundColor" red="0.92158359290000003" green="0.92158359290000003" blue="0.92158359290000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="xmW-7l-dXW" firstAttribute="trailing" secondItem="dkH-6j-wdM" secondAttribute="trailing" constant="25" id="1MO-N4-xHD"/>
-                            <constraint firstItem="npb-Rw-sru" firstAttribute="leading" secondItem="xmW-7l-dXW" secondAttribute="leading" constant="150" id="9aT-Y3-3a8"/>
-                            <constraint firstItem="9di-at-2Zd" firstAttribute="leading" secondItem="xmW-7l-dXW" secondAttribute="leading" constant="25" id="Eti-rr-OZJ"/>
-                            <constraint firstItem="Spx-Cl-maW" firstAttribute="leading" secondItem="npb-Rw-sru" secondAttribute="leading" id="Klc-dU-9yC"/>
-                            <constraint firstItem="KzX-fh-5yp" firstAttribute="leading" secondItem="xmW-7l-dXW" secondAttribute="leading" constant="25" id="TKQ-Ro-2vE"/>
-                            <constraint firstItem="Spx-Cl-maW" firstAttribute="top" secondItem="npb-Rw-sru" secondAttribute="top" id="UhY-wY-0ew"/>
-                            <constraint firstItem="9di-at-2Zd" firstAttribute="top" secondItem="dkH-6j-wdM" secondAttribute="bottom" constant="25" id="Uyx-5S-eO9"/>
-                            <constraint firstItem="dkH-6j-wdM" firstAttribute="leading" secondItem="xmW-7l-dXW" secondAttribute="leading" constant="25" id="X3k-mC-AgE"/>
-                            <constraint firstItem="xmW-7l-dXW" firstAttribute="trailing" secondItem="npb-Rw-sru" secondAttribute="trailing" constant="150" id="b5B-0O-9Km"/>
-                            <constraint firstItem="npb-Rw-sru" firstAttribute="top" secondItem="xmW-7l-dXW" secondAttribute="top" constant="25" id="baT-Ki-XTQ"/>
-                            <constraint firstItem="xmW-7l-dXW" firstAttribute="trailing" secondItem="KzX-fh-5yp" secondAttribute="trailing" constant="25" id="bhT-pb-Jij"/>
-                            <constraint firstItem="9di-at-2Zd" firstAttribute="top" secondItem="dkH-6j-wdM" secondAttribute="bottom" constant="25" id="cFo-m8-rsX"/>
-                            <constraint firstItem="xmW-7l-dXW" firstAttribute="trailing" secondItem="9di-at-2Zd" secondAttribute="trailing" constant="25" id="eNg-yL-7nG"/>
-                            <constraint firstItem="dkH-6j-wdM" firstAttribute="top" secondItem="KzX-fh-5yp" secondAttribute="bottom" constant="25" id="h8M-Dn-rQ2"/>
-                            <constraint firstItem="dkH-6j-wdM" firstAttribute="top" secondItem="KzX-fh-5yp" secondAttribute="bottom" constant="25" id="hX8-yr-Zi9"/>
-                            <constraint firstItem="KzX-fh-5yp" firstAttribute="top" secondItem="npb-Rw-sru" secondAttribute="bottom" constant="50" id="hud-h3-AFi"/>
-                            <constraint firstItem="xmW-7l-dXW" firstAttribute="bottom" secondItem="9di-at-2Zd" secondAttribute="bottom" constant="150" id="idN-JB-Keq"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="New Contact" id="lNA-RJ-PIh">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="1Jq-aB-daa">
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="PKd-K5-7Ym" id="vbS-tw-Yk0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="ProfileImage" destination="npb-Rw-sru" id="lUS-t3-VUZ"/>
-                        <outlet property="companyTextField" destination="mjR-2b-5So" id="PK8-S5-YuJ"/>
-                        <outlet property="nameTextfield" destination="B99-2t-Uzr" id="x7V-Ch-1cc"/>
-                        <outlet property="notesTextView" destination="9di-at-2Zd" id="b57-Z7-M3b"/>
-                        <outlet property="phoneNumbertextField" destination="HsB-C8-Q06" id="FC7-rJ-mGk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7l1-Mc-PIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1808.6956521739132" y="-95.089285714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fzH-XK-KAB">
@@ -209,28 +78,9 @@
             <point key="canvasLocation" x="36.231884057971016" y="-95.089285714285708"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="43f-vb-Iu6"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="camera.aperture" catalog="system" width="128" height="121"/>
-        <image name="message.fill" catalog="system" width="128" height="113"/>
-        <image name="phone.fill" catalog="system" width="128" height="114"/>
-        <image name="video.fill" catalog="system" width="128" height="82"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemGroupedBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
