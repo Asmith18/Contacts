@@ -22,7 +22,7 @@ class ContactTableViewController: UITableViewController {
     }
     
     @IBAction func addContactButtonTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ContactDetail", bundle: nil)
+        let storyboard = UIStoryboard(name: "ContactDetailCreator", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "detail") as? ContactDetailViewController else { return }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
@@ -41,10 +41,9 @@ class ContactTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       let contact = viewModel.contactList[indexPath.row]
-        let storyboard = UIStoryboard(name: "ContactDetail", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "detail") as? ContactDetailViewController else { return }
-        viewController.viewModel = ContactDetailViewModel(contact: contact)
+       let storyboard = UIStoryboard(name: "ContactDetailView", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "detailViewer") as? ContactDetailViewerViewController else { return }
+        viewController.viewModel = ContactDetailViewerViewModel(delegate: viewController)
         viewController.viewModel.contact = viewModel.contactList[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         self.navigationController?.pushViewController(viewController, animated: true)

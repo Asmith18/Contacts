@@ -10,12 +10,12 @@ import UIKit
 
 class Contact {
     
-    let name: String
-    let company: String?
-    let phoneNumber: String?
-    let notes: String?
-    let profileImage: String?
-    let uuid: String
+    var name: String
+    var company: String?
+    var phoneNumber: String?
+    var notes: String?
+    var profileImage: String?
+    var uuid: String
     
     enum Keys {
         static let name = "name"

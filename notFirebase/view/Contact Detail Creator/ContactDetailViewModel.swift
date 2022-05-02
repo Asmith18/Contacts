@@ -18,7 +18,12 @@ class ContactDetailViewModel {
         self.contact = contact
     }
     
-    func saveContact(contact: Contact) {
-         FirebaseController().saveLocation(contact)
+    func saveContact(contact: Contact?) {
+        if let contact = contact {
+            FirebaseController().saveLocation(contact)
+        } else {
+            guard let contact = contact else { return }
+            FirebaseController().saveLocation(contact)
+        }
     }
 }

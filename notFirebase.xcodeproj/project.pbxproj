@@ -28,7 +28,10 @@
 		C2D80A3A281F02D20061EEDF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C2D80A39281F02D20061EEDF /* FirebaseMessaging */; };
 		C2D80A3C281F02DB0061EEDF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C2D80A3B281F02DB0061EEDF /* FirebaseStorage */; };
 		C2D80A3E281F12E60061EEDF /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D80A3D281F12E60061EEDF /* ContactTableViewCell.swift */; };
-		C2D80A4028207CAA0061EEDF /* ContactDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D80A3F28207CAA0061EEDF /* ContactDetail.storyboard */; };
+		C2D80A4028207CAA0061EEDF /* ContactDetailCreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D80A3F28207CAA0061EEDF /* ContactDetailCreator.storyboard */; };
+		C2D80A42282083CE0061EEDF /* ContactDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D80A41282083CE0061EEDF /* ContactDetailView.storyboard */; };
+		C2D80A45282084E70061EEDF /* ContactDetailViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D80A44282084E70061EEDF /* ContactDetailViewerViewController.swift */; };
+		C2D80A47282085000061EEDF /* ContactDetailViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D80A46282085000061EEDF /* ContactDetailViewerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +54,10 @@
 		C25047A827CFC822001C11AB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C2D80A34281DB6260061EEDF /* notFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D80A3D281F12E60061EEDF /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
-		C2D80A3F28207CAA0061EEDF /* ContactDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactDetail.storyboard; sourceTree = "<group>"; };
+		C2D80A3F28207CAA0061EEDF /* ContactDetailCreator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactDetailCreator.storyboard; sourceTree = "<group>"; };
+		C2D80A41282083CE0061EEDF /* ContactDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactDetailView.storyboard; sourceTree = "<group>"; };
+		C2D80A44282084E70061EEDF /* ContactDetailViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewerViewController.swift; sourceTree = "<group>"; };
+		C2D80A46282085000061EEDF /* ContactDetailViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				C21FE65F27C8195000942032 /* Main.storyboard */,
-				C2D80A3F28207CAA0061EEDF /* ContactDetail.storyboard */,
+				C2D80A3F28207CAA0061EEDF /* ContactDetailCreator.storyboard */,
+				C2D80A41282083CE0061EEDF /* ContactDetailView.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -127,7 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				C21FE63327C6F04200942032 /* Contact  */,
-				C21FE63227C6F03B00942032 /* Contact Detail */,
+				C21FE63227C6F03B00942032 /* Contact Detail Creator */,
+				C2D80A43282084A40061EEDF /* Contact Detail Viewer */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -149,13 +157,13 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		C21FE63227C6F03B00942032 /* Contact Detail */ = {
+		C21FE63227C6F03B00942032 /* Contact Detail Creator */ = {
 			isa = PBXGroup;
 			children = (
 				C21ED861281DA01D00BCEC26 /* ContactDetailViewController.swift */,
 				C21ED866281DB33C00BCEC26 /* ContactDetailViewModel.swift */,
 			);
-			path = "Contact Detail";
+			path = "Contact Detail Creator";
 			sourceTree = "<group>";
 		};
 		C21FE63327C6F04200942032 /* Contact  */ = {
@@ -175,6 +183,15 @@
 				C25047A827CFC822001C11AB /* MessageUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2D80A43282084A40061EEDF /* Contact Detail Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				C2D80A44282084E70061EEDF /* ContactDetailViewerViewController.swift */,
+				C2D80A46282085000061EEDF /* ContactDetailViewerViewModel.swift */,
+			);
+			path = "Contact Detail Viewer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,10 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C21FE62127C6EF9000942032 /* LaunchScreen.storyboard in Resources */,
-				C2D80A4028207CAA0061EEDF /* ContactDetail.storyboard in Resources */,
+				C2D80A4028207CAA0061EEDF /* ContactDetailCreator.storyboard in Resources */,
 				C21ED85B281D92B700BCEC26 /* GoogleService-Info.plist in Resources */,
 				C21FE61E27C6EF9000942032 /* Assets.xcassets in Resources */,
 				C21FE66027C8195000942032 /* Main.storyboard in Resources */,
+				C2D80A42282083CE0061EEDF /* ContactDetailView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +283,11 @@
 				C21FE65E27C80E5800942032 /* FirebaseStroageController.swift in Sources */,
 				C21FE61927C6EF8F00942032 /* ViewController.swift in Sources */,
 				C21FE61527C6EF8F00942032 /* AppDelegate.swift in Sources */,
+				C2D80A45282084E70061EEDF /* ContactDetailViewerViewController.swift in Sources */,
 				C21ED860281D9FF400BCEC26 /* ContactTableViewController.swift in Sources */,
 				C21FE61727C6EF8F00942032 /* SceneDelegate.swift in Sources */,
 				C21ED862281DA01D00BCEC26 /* ContactDetailViewController.swift in Sources */,
+				C2D80A47282085000061EEDF /* ContactDetailViewerViewModel.swift in Sources */,
 				C21ED865281DA0F100BCEC26 /* ContactViewModel.swift in Sources */,
 				C21ED85D281D92D100BCEC26 /* Contact.swift in Sources */,
 			);
