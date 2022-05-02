@@ -37,7 +37,7 @@ struct FirebaseController {
     }
     
     func deleteLocation(_ location: Contact) {
-        dataBase.collection("Contacts").document(location.uuid).collection(Contact.Keys.collectionType).document(location.uuid).delete()
+        dataBase.collection("Contacts").document(location.uuid).delete()
         FirebaseStorageController().deleteImage(fromcontact: location)
     }
     

@@ -56,6 +56,7 @@ class ContactTableViewController: UITableViewController {
         if editingStyle == .delete {
             let contactToDelete = viewModel.contactList[indexPath.row]
             viewModel.deleteContact(contact: contactToDelete)
+            FirebaseController().deleteLocation(contactToDelete)
             viewModel.contactList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
