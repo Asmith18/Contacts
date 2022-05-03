@@ -27,7 +27,13 @@ class ContactDetailViewController: UIViewController, UIImagePickerControllerDele
     //MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        guard let fullImageURL = viewModel.imageURL else { return }
+        guard let fullImageURL = viewModel.imageURL else {
+            let ac = UIAlertController(title: "No image", message: "Please upload an image before continuing.", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            ac.addAction(confirmAction)
+            self.present(ac, animated: true)
+            return
+        }
         guard let name =  nameTextfield.text,
               let compnay = companyTextField.text,
               let phoneNumber = phoneNumbertextField.text,

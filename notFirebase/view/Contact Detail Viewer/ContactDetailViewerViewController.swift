@@ -45,7 +45,7 @@ class ContactDetailViewerViewController: UIViewController {
               let notes = notesTextView.text else { return }
         let contact = Contact(name: name, company: compnay, phoneNumber: phoneNumber, notes: notes, profilePhoto: "\(profileImage)")
         
-        viewModel.saveContact(name: name, company: compnay, phoneNumber: phoneNumber, notes: notes, profilePhoto: "\(profileImage)")
+        viewModel.saveContact(name: name, company: compnay, phoneNumber: phoneNumber, notes: notes)
         viewModel.contactList.append(contact)
         self.navigationController?.popViewController(animated: true)
     }

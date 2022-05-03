@@ -42,7 +42,7 @@ struct FirebaseController {
         dataBase.collection("Contacts")
             .document(location.uuid)
             .delete()
-        FirebaseStorageController().deleteImage(fromcontact: location)
+        FirebaseStorageController().deleteImage(fromContact: location)
     }
     
     func getLocations(completion: @escaping (Result<[Contact], FirebaseError>) -> Void) {

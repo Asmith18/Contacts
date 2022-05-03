@@ -60,11 +60,10 @@ struct FirebaseStorageController {
         }
     }
     
-    func deleteImage(fromcontact contact: Contact) {
+    func deleteImage(fromContact contact: Contact) {
         storage.child("ContactPics")
-            .child(contact.uuid)
             .child(contact.imagePath)
-            .delete(completion: nil)
+            .delete()
     }
 }
 

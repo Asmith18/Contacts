@@ -25,13 +25,12 @@ class ContactDetailViewerViewModel {
         self.delegate = delegate
     }
     
-    func saveContact(name: String, company: String?, phoneNumber: String?, notes: String?, profilePhoto: String?) {
+    func saveContact(name: String, company: String?, phoneNumber: String?, notes: String?) {
         if let contact = contact {
             contact.name = name
             contact.company = company
             contact.phoneNumber = phoneNumber
             contact.notes = notes
-            contact.profileImage = profilePhoto
             FirebaseController().saveLocation(contact)
         } else {
             guard let contact = contact else { return }
