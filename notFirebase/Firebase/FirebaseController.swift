@@ -33,11 +33,15 @@ struct FirebaseController {
     let dataBase = Firestore.firestore()
     
     func saveLocation(_ location: Contact) {
-        dataBase.collection("Contacts").document(location.uuid).setData(location.contactData)
+        dataBase.collection("Contacts")
+            .document(location.uuid)
+            .setData(location.contactData)
     }
     
     func deleteLocation(_ location: Contact) {
-        dataBase.collection("Contacts").document(location.uuid).delete()
+        dataBase.collection("Contacts")
+            .document(location.uuid)
+            .delete()
         FirebaseStorageController().deleteImage(fromcontact: location)
     }
     

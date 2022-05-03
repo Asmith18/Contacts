@@ -32,6 +32,7 @@
 		C2D80A42282083CE0061EEDF /* ContactDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D80A41282083CE0061EEDF /* ContactDetailView.storyboard */; };
 		C2D80A45282084E70061EEDF /* ContactDetailViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D80A44282084E70061EEDF /* ContactDetailViewerViewController.swift */; };
 		C2D80A47282085000061EEDF /* ContactDetailViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D80A46282085000061EEDF /* ContactDetailViewerViewModel.swift */; };
+		C2D80A492821EAC60061EEDF /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D80A482821EAC60061EEDF /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C2D80A41282083CE0061EEDF /* ContactDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactDetailView.storyboard; sourceTree = "<group>"; };
 		C2D80A44282084E70061EEDF /* ContactDetailViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewerViewController.swift; sourceTree = "<group>"; };
 		C2D80A46282085000061EEDF /* ContactDetailViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewerViewModel.swift; sourceTree = "<group>"; };
+		C2D80A482821EAC60061EEDF /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		C21FE62A27C6EFDE00942032 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2D80A482821EAC60061EEDF /* ImageCache.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				C2D80A47282085000061EEDF /* ContactDetailViewerViewModel.swift in Sources */,
 				C21ED865281DA0F100BCEC26 /* ContactViewModel.swift in Sources */,
 				C21ED85D281D92D100BCEC26 /* Contact.swift in Sources */,
+				C2D80A492821EAC60061EEDF /* ImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

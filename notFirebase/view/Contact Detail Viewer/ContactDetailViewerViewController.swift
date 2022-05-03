@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import MessageUI
 
 class ContactDetailViewerViewController: UIViewController {
     
     //MARK: -
+    @IBOutlet weak var contactNameHeaderText: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -28,6 +30,7 @@ class ContactDetailViewerViewController: UIViewController {
         
         viewModel.setImage(contact: contact)
         self.nameTextField.text = contact.name
+        self.contactNameHeaderText.text = contact.name
         self.companyTextField.text = contact.company
         self.notesTextView.text = contact.notes
         self.phoneNumberTextField.text = contact.phoneNumber
@@ -46,9 +49,37 @@ class ContactDetailViewerViewController: UIViewController {
         viewModel.contactList.append(contact)
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func messagebuttonTapped(_ sender: Any) {
+        guard MFMessageComposeViewController.canSendText() else {
+            print("Device is not capable to send messages")
+            return
+        }
+        
+        let composer = MFMessageComposeViewController()
+        composer.messageComposeDelegate = self
+        composer.recipients = [phoneNumberTextField.text ?? ""]
+        composer.subject = "Sent from my Iphone"
+        present(composer, animated: true)
+    }
 }
 
-extension ContactDetailViewerViewController: ContactDetailViewerViewModelDelegate {
+extension ContactDetailViewerViewController: ContactDetailViewerViewModelDelegate, MFMessageComposeViewControllerDelegate {
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            print("Cancelled")
+        case .failed:
+            print("failed")
+        case .sent:
+            print("sent")
+        default:
+            print("UNKOWN")
+        }
+        controller.dismiss(animated: true)
+    }
+    
     func contactRecieved() {
         updateViews()
     }

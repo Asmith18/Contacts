@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Contact-->
+        <!--Contact Detail Viewer View Controller-->
         <scene sceneID="1jH-S3-u3q">
             <objects>
                 <viewController storyboardIdentifier="detailViewer" id="Dfr-Ti-sCU" customClass="ContactDetailViewerViewController" customModule="notFirebase" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,8 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4W-fy-8j9">
+                                <rect key="frame" x="111" y="54" width="192.5" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.aperture" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KT8-wd-a0B">
-                                <rect key="frame" x="150" y="69.5" width="114" height="113"/>
+                                <rect key="frame" x="150" y="106.5" width="114" height="113"/>
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -25,7 +31,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5pw-sG-x7x">
-                                <rect key="frame" x="25" y="233" width="364" height="31"/>
+                                <rect key="frame" x="25" y="270" width="364" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afW-33-hvi">
                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="31"/>
@@ -42,6 +48,9 @@
                                             <color key="baseForegroundColor" systemColor="systemBlueColor"/>
                                             <color key="baseBackgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="messagebuttonTapped:" destination="Dfr-Ti-sCU" eventType="touchUpInside" id="agF-w9-GUc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-TB-x2q">
                                         <rect key="frame" x="259.5" y="0.0" width="104.5" height="31"/>
@@ -54,7 +63,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pap-35-60E">
-                                <rect key="frame" x="25" y="289" width="364" height="118"/>
+                                <rect key="frame" x="25" y="326" width="364" height="118"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-mX-fuQ">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="34"/>
@@ -74,14 +83,14 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-fR-mMi">
-                                <rect key="frame" x="25" y="456.5" width="364" height="280.5"/>
+                                <rect key="frame" x="25" y="493.5" width="364" height="243.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-E6-662">
-                                <rect key="frame" x="25" y="428" width="46" height="20.5"/>
+                                <rect key="frame" x="25" y="465" width="46" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -90,6 +99,8 @@
                         <viewLayoutGuide key="safeArea" id="moR-uX-syA"/>
                         <color key="backgroundColor" red="0.92158359290000003" green="0.92158359290000003" blue="0.92158359290000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="K4W-fy-8j9" firstAttribute="top" secondItem="moR-uX-syA" secondAttribute="top" constant="10" id="3S7-X7-job"/>
+                            <constraint firstItem="KT8-wd-a0B" firstAttribute="top" secondItem="K4W-fy-8j9" secondAttribute="bottom" constant="15" id="FnD-qG-H2L"/>
                             <constraint firstItem="Zzu-fR-mMi" firstAttribute="leading" secondItem="moR-uX-syA" secondAttribute="leading" constant="25" id="FzX-Fj-hNi"/>
                             <constraint firstItem="5pw-sG-x7x" firstAttribute="leading" secondItem="moR-uX-syA" secondAttribute="leading" constant="25" id="GRr-bg-wOw"/>
                             <constraint firstItem="moR-uX-syA" firstAttribute="trailing" secondItem="pap-35-60E" secondAttribute="trailing" constant="25" id="MvH-mi-hnT"/>
@@ -100,8 +111,8 @@
                             <constraint firstItem="moR-uX-syA" firstAttribute="trailing" secondItem="AH8-E6-662" secondAttribute="trailing" constant="343" id="ViI-Ic-4DH"/>
                             <constraint firstItem="KT8-wd-a0B" firstAttribute="leading" secondItem="moR-uX-syA" secondAttribute="leading" constant="150" id="WXk-tl-Mie"/>
                             <constraint firstItem="pap-35-60E" firstAttribute="top" secondItem="5pw-sG-x7x" secondAttribute="bottom" constant="25" id="YcD-8Z-zwj"/>
-                            <constraint firstItem="KT8-wd-a0B" firstAttribute="top" secondItem="moR-uX-syA" secondAttribute="top" constant="25" id="a58-ZE-Sga"/>
                             <constraint firstItem="AH8-E6-662" firstAttribute="leading" secondItem="moR-uX-syA" secondAttribute="leading" constant="25" id="fgc-3Y-gbs"/>
+                            <constraint firstItem="K4W-fy-8j9" firstAttribute="centerX" secondItem="moR-uX-syA" secondAttribute="centerX" id="muv-mB-dT8"/>
                             <constraint firstItem="moR-uX-syA" firstAttribute="trailing" secondItem="KT8-wd-a0B" secondAttribute="trailing" constant="150" id="mxt-8y-Cy5"/>
                             <constraint firstItem="Zzu-fR-mMi" firstAttribute="top" secondItem="AH8-E6-662" secondAttribute="bottom" constant="8" symbolic="YES" id="pIH-wL-mO3"/>
                             <constraint firstItem="moR-uX-syA" firstAttribute="trailing" secondItem="5pw-sG-x7x" secondAttribute="trailing" constant="25" id="tz0-JW-PGU"/>
@@ -109,7 +120,7 @@
                             <constraint firstItem="pap-35-60E" firstAttribute="top" secondItem="5pw-sG-x7x" secondAttribute="bottom" constant="25" id="zNw-Er-4gQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Contact" id="fGD-TI-zgu">
+                    <navigationItem key="navigationItem" id="fGD-TI-zgu">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="rpA-dK-qgL">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="Dfr-Ti-sCU" id="Ulw-bb-1LE"/>
@@ -118,6 +129,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="companyTextField" destination="EBM-8k-Mcy" id="v10-AR-Pzl"/>
+                        <outlet property="contactNameHeaderText" destination="K4W-fy-8j9" id="fcC-qx-HOQ"/>
                         <outlet property="nameTextField" destination="dbi-mX-fuQ" id="9x7-Og-DBO"/>
                         <outlet property="notesTextView" destination="Zzu-fR-mMi" id="KPr-ZA-2Kl"/>
                         <outlet property="phoneNumberTextField" destination="aOe-rh-H6x" id="lNK-sU-ITC"/>

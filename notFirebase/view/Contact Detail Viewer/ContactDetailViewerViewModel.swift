@@ -18,6 +18,7 @@ class ContactDetailViewerViewModel {
     
     var contact: Contact?
     var contactList = [Contact]()
+    var imageURL: URL?
     weak var delegate: ContactDetailViewerViewModelDelegate?
     
     init(delegate: ContactDetailViewerViewModelDelegate) {

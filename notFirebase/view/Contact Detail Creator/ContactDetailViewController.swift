@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ContactDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -25,22 +26,20 @@ class ContactDetailViewController: UIViewController, UIImagePickerControllerDele
     
     //MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let profileImage = ProfileImage.image else { return }
         
+        guard let fullImageURL = viewModel.imageURL else { return }
         guard let name =  nameTextfield.text,
               let compnay = companyTextField.text,
               let phoneNumber = phoneNumbertextField.text,
               let notes = notesTextView.text else { return }
         
-        let contact = Contact(name: name, company: compnay, phoneNumber: phoneNumber, notes: notes, profilePhoto: "\(profileImage)")
+        let contact = Contact(name: name, company: compnay, phoneNumber: phoneNumber, notes: notes, profilePhoto: fullImageURL.lastPathComponent)
         
-        viewModel.saveContact(contact: contact)
+        viewModel.contact = contact
+        guard let imageToUpload = ProfileImage.image else { return }
+        viewModel.saveContact(image: imageToUpload)
         viewModel.contactList.append(contact)
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func messagebuttonTapped(_ sender: Any) {
-        
     }
     
     @IBAction func imagePickerButtonTapped(_ sender: Any) {
@@ -55,7 +54,7 @@ class ContactDetailViewController: UIViewController, UIImagePickerControllerDele
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
         guard let imageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL else { return }
-        viewModel.profileImage = imageURL
+        viewModel.imageURL = imageURL
         self.ProfileImage.image = image
     }
     
